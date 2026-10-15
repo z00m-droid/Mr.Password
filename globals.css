@@ -1,36 +1,52 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 html,
 body {
-  margin: 0px;
+  width: 100%;
+  height: 100%;
   min-height: 100%;
+  overflow: hidden;      /* полностью убирает скроллы */
+  overscroll-behavior: none; /* убирает «оттягивание» страницы */
+  background-color: #0b1120;
 }
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
+
+body {
+  /* мобильные браузеры любят дёргаться при скролле — отключаем */
+  position: fixed;
+  inset: 0;
+  touch-action: manipulation;
 }
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
 a {
   text-decoration: none;
+  color: inherit;
 }
-/* @FONTWARNING[{"type": "restricted", "family": "Montserrat-ExtraBold", "weight": "800", "style": "normal", "allowsCrossOrigin": false}] */
 
 @font-face {
   font-family: "Montserrat-ExtraBold";
   src: local("Montserrat-ExtraBold");
+  font-display: swap;
 }
-/* @FONTWARNING[{"type": "restricted", "family": "Montserrat-Bold", "weight": "700", "style": "normal", "allowsCrossOrigin": false}] */
-
 @font-face {
   font-family: "Montserrat-Bold";
   src: local("Montserrat-Bold");
+  font-display: swap;
 }
-/* @FONTWARNING[{"type": "restricted", "family": "Montserrat-Medium", "weight": "500", "style": "normal", "allowsCrossOrigin": false}] */
-
 @font-face {
   font-family: "Montserrat-Medium";
   src: local("Montserrat-Medium");
+  font-display: swap;
 }
